@@ -7,21 +7,23 @@ const BookList = () => {
   return (
     <section className="bookList">
       <Book />
-      <Book />
+      <Book author />
       <Book />
     </section>
   );
 };
-//1:47
-const Book = () => {
+
+const author = "Stephen King";
+const title = "Holly";
+const img =
+  "https://m.media-amazon.com/images/I/417kSOgt4aL._SX325_BO1,204,203,200_.jpg";
+
+const Book = (props) => {
   return (
     <article className="book">
-      <img
-        src="https://m.media-amazon.com/images/I/417kSOgt4aL._SX325_BO1,204,203,200_.jpg"
-        alt="Holly"
-      />
-      <h2>Holly</h2>
-      <h4>Stephen King</h4>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{props.author}</h4>
     </article>
   );
 };
