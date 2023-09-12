@@ -17,7 +17,7 @@ const BookList = () => {
         title={secondBook.title}
         img={secondBook.img}
       >
-        <p> Bla bla bla.</p>
+        <p> Bla bla bla bla.</p>
         <button>Click me</button>
       </Book>
 
