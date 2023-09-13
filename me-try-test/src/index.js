@@ -22,6 +22,7 @@ const pugs = [
     position: "Junior",
   },
   {
+    id: 4,
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw3ayPJEbecSENdzxKCQxYOOjVAqEcrc8gEA&usqp=CAU",
     name: "Abraham",
     position: "Bottom",
@@ -38,12 +39,17 @@ const PugList = () => {
   return (
     <>
       <h1 style={styleforchoose}>Choose your Pug!!</h1>
-      <section className="PugList">{Pug}</section>
+      <section className="PugList">
+        {pugs.map((prop) => {
+          const { img, name, position, id } = prop;
+          return <Pug img={img} name={name} position={position} key={id} />;
+        })}
+      </section>
     </>
   );
 };
 
-const Pug = pugs.map((prop) => {
+const Pug = (prop) => {
   const { img, name, position, children } = prop;
   return (
     <article className="Pug">
@@ -53,7 +59,7 @@ const Pug = pugs.map((prop) => {
       {children}
     </article>
   );
-});
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
