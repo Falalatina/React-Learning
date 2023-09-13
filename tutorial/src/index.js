@@ -36,8 +36,9 @@ const BookList = () => {
 };
 
 const EventExample = () => {
-  const handleFormInput = () => {
-    console.log("handle from input");
+  const handleFormInput = (input) => {
+    console.log(input);
+    console.log(`handle from input ${input.target.value}`);
   };
   const handleButtonClick = () => {
     alert("handle from button");
