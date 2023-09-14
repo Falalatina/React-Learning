@@ -3,7 +3,7 @@ const Book = (props) => {
 
   return (
     <article className="book">
-      <span>{index}</span>
+      <span>{`#${index}`}</span>
       <img src={img} alt={title} />
       <h2>{title}</h2>
       <h4>{author}</h4>

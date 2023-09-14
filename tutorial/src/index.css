@@ -17,7 +17,6 @@ body {
   max-width: 1170px;
   margin: 5rem auto;
   gap: 2rem;
-  position: relative;
 }
 
 @media screen and (min-width: 768px) {
@@ -32,6 +31,7 @@ body {
   border-radius: 1rem;
   padding: 2rem;
   text-align: center;
+  position: relative;
 }
 
 .book img {
@@ -55,7 +55,13 @@ body {
 }
 
 .book span {
-  position: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
   background-color: chocolate;
-  padding: 10px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  color: white;
 }
