@@ -12,22 +12,17 @@ const styleforchoose = {
 };
 
 const PugList = () => {
+  const getId = (id) => {
+    const rightPug = pugs.find((rightPug) => rightPug.id === id);
+    alert(` Id: ${rightPug.id}`);
+  };
   return (
     <>
       <h1 style={styleforchoose}>Choose your Pug!!</h1>
 
       <section className="PugList">
-        {pugs.map((prop, index) => {
-          const { img, name, position, id } = prop;
-          return (
-            <Pug
-              img={img}
-              name={name}
-              position={position}
-              key={id}
-              index={index}
-            />
-          );
+        {pugs.map((pug, index) => {
+          return <Pug {...pug} key={pug.id} index={index} getId={getId} />;
         })}
       </section>
     </>
