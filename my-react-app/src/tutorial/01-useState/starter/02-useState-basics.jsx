@@ -10,12 +10,17 @@ const UseStateBasics = () => {
   const handleClick = () => {
     setCount(count + 1);
   };
-
+  const clearVal = () => {
+    setCount(0);
+  };
   return (
     <div>
       <h2>Val is: {count}</h2>
       <button type="button" className="btn" onClick={handleClick}>
         Add
+      </button>
+      <button type="button" className="btn" onClick={clearVal}>
+        Make it zero
       </button>
     </div>
   );
