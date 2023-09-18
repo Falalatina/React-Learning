@@ -1,5 +1,14 @@
+import React from "react";
+
 const ErrorExample = () => {
-  return <h2>useState error example</h2>;
+  let count = 0;
+  return (
+    <>
+      <h1>useState error example</h1>
+
+      <button>Add</button>
+    </>
+  );
 };
 
 export default ErrorExample;
