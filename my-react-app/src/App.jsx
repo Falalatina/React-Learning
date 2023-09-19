@@ -1,14 +1,16 @@
 import { useState } from "react";
 import "./App.css";
 
-import Starter from "./tutorial/01-useState/starter/02-useState-basics";
+import { data } from "./data";
+
+import Starter from "./tutorial/01-useState/starter/03-useState-array";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className="container">
-      <Starter />
+      <Starter key={data.id} />
     </div>
   );
 }

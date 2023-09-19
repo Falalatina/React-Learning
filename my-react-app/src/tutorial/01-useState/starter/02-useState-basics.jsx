@@ -7,6 +7,7 @@ const UseStateBasics = () => {
   // const val = useState("hello")[0];
   // console.log(val);
   const [count, setCount] = useState(0);
+  const [name, setName] = React.useState(0);
   const handleClick = () => {
     setCount(count + 1);
   };
