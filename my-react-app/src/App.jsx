@@ -3,7 +3,7 @@ import "./App.css";
 
 import { data } from "./data";
 
-import Starter from "./tutorial/01-useState/starter/04-useState-object";
+import Starter from "./tutorial/01-useState/starter/05-useState-gotcha";
 
 function App() {
   const [count, setCount] = useState(0);
