@@ -3,7 +3,7 @@ import "./App.css";
 
 import { data } from "./data";
 
-import Starter from "./tutorial/02-useEffect/starter/01-code-example.jsx";
+import Starter from "./tutorial/02-useEffect/starter/03-multiple-effects";
 
 function App() {
   const [count, setCount] = useState(0);
