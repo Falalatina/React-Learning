@@ -3,7 +3,7 @@ import "./App.css";
 
 import { data } from "./data";
 
-import Starter from "./tutorial/03-conditional-rendering/starter/02-multiple-returns-fetch-data";
+import Starter from "./tutorial/03-conditional-rendering/starter/03-hooks-rule";
 
 function App() {
   const [count, setCount] = useState(0);
