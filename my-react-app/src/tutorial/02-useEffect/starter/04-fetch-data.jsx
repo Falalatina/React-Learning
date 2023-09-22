@@ -29,7 +29,7 @@ const FetchData = () => {
       try {
         const response = await fetch(url);
         const users = await response.json();
-        console.log(users);
+        setUsers(users);
       } catch (error) {
         console.log(error);
       }
@@ -37,6 +37,36 @@ const FetchData = () => {
     fetchData();
   }, []);
 
-  return <h2>fetch data example</h2>;
+  return (
+    <section>
+      <h3>github users</h3>
+      <ul className="users">
+        {users.map((user) => {
+          const { id, login, avatar_url, html_url } = user;
+          // console.log(user);
+          return (
+            <li key={id} style={{ position: "relative" }}>
+              <img src={avatar_url} alt={login} />
+              <div>
+                <h3>{login}</h3>
+                <a href={html_url}>Profile</a>
+              </div>
+              <button
+                style={{ position: "absolute", right: "0" }}
+                className="btn"
+                type="button"
+                onClick={() => {
+                  const newUsers = users.filter((user) => user.id !== id);
+                  setUsers(newUsers);
+                }}
+              >
+                Delete
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  );
 };
 export default FetchData;
