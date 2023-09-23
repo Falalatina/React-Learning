@@ -22,6 +22,11 @@ const ShortCircuitExamples = () => {
       )}
       <h1>-------------</h1>
       {user && <SomeComponent name={user.name} />}
+      <h1>-------------</h1>
+      <h2 style={{ margin: "1rem" }}>Ternary operator</h2>
+      <button type="button" className="btn">
+        {isEditing ? "edit" : "add"}
+      </button>
     </div>
   );
 };

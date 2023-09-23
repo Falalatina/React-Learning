@@ -17,7 +17,7 @@ const MultipleReturnsFetchData = () => {
           return;
         }
         const user = await response.json();
-        //console.log(response);
+        console.log(user);
         setUser(user);
       } catch (error) {
         setIsError(true);
