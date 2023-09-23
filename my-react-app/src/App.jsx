@@ -3,7 +3,7 @@ import "./App.css";
 
 import { data } from "./data";
 
-import Starter from "./tutorial/03-conditional-rendering/starter/05-short-circuit-examples";
+import Starter from "./tutorial/03-conditional-rendering/starter/06-toggle-challenge";
 
 function App() {
   const [count, setCount] = useState(0);
