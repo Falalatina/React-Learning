@@ -27,6 +27,14 @@ const ShortCircuitExamples = () => {
       <button type="button" className="btn">
         {isEditing ? "edit" : "add"}
       </button>
+      <h1>---------</h1>
+      {user ? (
+        <div>
+          <h2>hi {user.name}</h2>
+        </div>
+      ) : (
+        <h1>ok login maybe</h1>
+      )}
     </div>
   );
 };
