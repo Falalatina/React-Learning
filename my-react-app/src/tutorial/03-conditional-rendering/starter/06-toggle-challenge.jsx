@@ -12,9 +12,9 @@ const ToggleChallenge = () => {
         className="btn"
         onClick={() => {
           setClick(!click);
-          setTimeout(() => {
-            setClick(!click);
-          }, 2000);
+          // setTimeout(() => {
+          //   setClick(!click);
+          // }, 2000);
         }}
       >
         {click ? "Clicked" : "Click me"}
