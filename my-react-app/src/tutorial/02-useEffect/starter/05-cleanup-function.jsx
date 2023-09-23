@@ -22,6 +22,12 @@ const CleanupFunction = () => {
 const SecondComponent = () => {
   useEffect(() => {
     console.log("hmmmm, intyeresting");
+    const intId = setInterval(() => {
+      console.log("hi im interval");
+    }, 1000);
+    return () => {
+      clearInterval(intId);
+    };
   }, []);
 
   return <h2>Hello? o.o </h2>;
