@@ -21,12 +21,12 @@ const CleanupFunction = () => {
 
 const SecondComponent = () => {
   useEffect(() => {
-    console.log("hmmmm, intyeresting");
-    const intId = setInterval(() => {
-      console.log("hi im interval");
-    }, 1000);
+    const someFunc = () => {
+      //some logic
+    };
+    window.addEventListener("scroll", someFunc);
     return () => {
-      clearInterval(intId);
+      window.removeEventListener("scroll", someFunc);
     };
   }, []);
 
