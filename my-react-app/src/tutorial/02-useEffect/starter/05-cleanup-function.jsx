@@ -1,5 +1,30 @@
+import { useState, useEffect } from "react";
+
 const CleanupFunction = () => {
-  return <h2>cleanup function</h2>;
+  const [toggle, setToggle] = useState(false);
+
+  return (
+    <div>
+      <button
+        type="button"
+        className="btn"
+        onClick={() => {
+          setToggle(!toggle);
+        }}
+      >
+        Toogle
+      </button>
+      <div>{toggle && <SecondComponent />}</div>
+    </div>
+  );
+};
+
+const SecondComponent = () => {
+  useEffect(() => {
+    console.log("hmmmm, intyeresting");
+  }, []);
+
+  return <h2>Hello? o.o </h2>;
 };
 
 export default CleanupFunction;
