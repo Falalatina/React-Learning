@@ -1,17 +1,14 @@
 import { useState } from "react";
 import "./App.css";
-
-import { data } from "./data";
-import Example from "./tutorial/04-project-structure/starter/Example";
-
-// import Starter from "./tutorial/02-useEffect/starter/05-cleanup-function";
+import List from "./tutorial/05-leverage-javascript/starter/List";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className="container">
-      <Example />
+      <h2>Leverage JavaScript</h2>
+      <List />
     </div>
   );
 }
