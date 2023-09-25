@@ -2,8 +2,7 @@ import { useState } from "react";
 import "./App.css";
 
 import { data } from "./data";
-
-import { Home, About } from "./tutorial/04-project-structure/starter/Pages";
+import Example from "./tutorial/04-project-structure/starter/Example";
 
 // import Starter from "./tutorial/02-useEffect/starter/05-cleanup-function";
 
@@ -12,8 +11,7 @@ function App() {
 
   return (
     <div className="container">
-      <Home />
-      <About />
+      <Example />
     </div>
   );
 }
