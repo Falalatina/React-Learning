@@ -1,14 +1,14 @@
 import { useState } from "react";
 import "./App.css";
-import List from "./tutorial/05-leverage-javascript/starter/List";
+
+import Starter from "./tutorial/06-forms/starter/01-controlled-inputs";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className="container">
-      <h2>Leverage JavaScript</h2>
-      <List />
+      <Starter />
     </div>
   );
 }
