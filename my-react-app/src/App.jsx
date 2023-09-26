@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-import Starter from "./tutorial/06-forms/starter/02-user-challenge";
+import Starter from "./tutorial/06-forms/starter/04-other-inputs";
 
 function App() {
   const [count, setCount] = useState(0);
