@@ -1,11 +1,8 @@
-import { useEffect, useState } from 'react';
-const url = 'https://api.github.com/users/QuincyLarson';
+import { useEffect, useState } from "react";
+
+const url = "https://api.github.com/users/QuincyLarson";
 
 const FetchData = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-  const [user, setUser] = useState(null);
-
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -41,7 +38,7 @@ const FetchData = () => {
   return (
     <div>
       <img
-        style={{ width: '100px', borderRadius: '25px' }}
+        style={{ width: "100px", borderRadius: "25px" }}
         src={avatar_url}
         alt={name}
       />
