@@ -1,9 +1,9 @@
 import React from "react";
 
-const UserContainer1 = () => {
+const UserContainer1 = ({ user, logout }) => {
   return (
-    <div>
-      <div> Hi user</div>
+    <div className="user-container">
+      <div> Hi there, {user.name}</div>
       <button>LogOut</button>
     </div>
   );
