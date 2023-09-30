@@ -1,27 +1,55 @@
 import React from "react";
 import { data } from "../../../data";
-import { useState } from "react";
+import { useState, useReducer } from "react";
+
+const CLEAR_LIST = "CLEAR_LIST";
+const RESTORE_LIST = "RESTORE_LIST";
+const REMOVE_ITEM = "REMOVE_ITEM";
+
+const defaultState = {
+  people: data,
+  isLoading: false,
+};
+
+const reducer = (state, action) => {
+  if (action.type === CLEAR_LIST) {
+    return { ...state, people: [] };
+  }
+  throw new Error(`No matching "${action.type}" - action type `);
+
+  // if (action.type === RESTORE_LIST) {
+  //   return { ...state, people: data };
+  // }
+  // if (action.type === REMOVE_ITEM) {
+  //   const people = state.people;
+  //   let newPeople = people.filter((person) => person.id !== id);
+  //   return { ...state, people: newPeople };
+  //}
+};
+
 const ReducerBasics = () => {
-  const [people, setPeople] = React.useState(data);
-  const [isTherePeople, setIsTherePeople] = useState(true);
+  const [state, dispatch] = useReducer(reducer, defaultState);
 
   const restoreList = () => {
-    setPeople(data);
-    setIsTherePeople(true);
+    dispatch({ type: RESTORE_LIST });
+    // setPeople(data);
+    // setIsTherePeople(true);
   };
 
   const removeItem = (id) => {
-    let newPeople = people.filter((person) => person.id !== id);
-    setPeople(newPeople);
+    dispatch({ type: REMOVE_ITEM });
+    // setPeople(newPeople);
   };
 
   const deleteAll = () => {
-    setPeople([]);
-    setIsTherePeople(false);
+    dispatch({ type: CLEAR_LIST });
+    // setPeople([]);
+    // setIsTherePeople(false);
   };
+  //console.log(state);
   return (
     <div>
-      {people.map((person) => {
+      {state.people.map((person) => {
         const { id, name } = person;
         return (
           <div key={id} className="item">
@@ -30,7 +58,7 @@ const ReducerBasics = () => {
           </div>
         );
       })}
-      {isTherePeople ? (
+      {state.people.length > 1 ? (
         <button
           className="btn"
           style={{ marginTop: "2rem" }}
