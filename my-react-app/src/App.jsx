@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-import Starter from "./tutorial/10-useReducer/starter/01-useReducer";
+import Starter from "./tutorial/11-performance/starter/01-lower-state";
 
 function App() {
   const [count, setCount] = useState(0);
