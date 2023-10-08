@@ -5,10 +5,13 @@ const LowerState = () => {
   const [people, setPeople] = useState(data);
   const [count, setCount] = useState(0);
 
-  const removePerson = useCallback((id) => {
-    const newPeople = people.filter((person) => person.id !== id);
-    setPeople(newPeople);
-  }, data);
+  const removePerson = useCallback(
+    (id) => {
+      const newPeople = people.filter((person) => person.id !== id);
+      setPeople(newPeople);
+    },
+    [people]
+  );
 
   return (
     <section>
