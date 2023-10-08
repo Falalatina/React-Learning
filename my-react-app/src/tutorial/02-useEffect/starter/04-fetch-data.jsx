@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const url = "https://api.github.com/users";
 
@@ -24,18 +24,19 @@ const FetchData = () => {
 
   // getTours();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        const users = await response.json();
-        setUsers(users);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
+  const fetchData = useCallback(async () => {
+    try {
+      const response = await fetch(url);
+      const users = await response.json();
+      setUsers(users);
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   return (
     <section>
@@ -51,7 +52,7 @@ const FetchData = () => {
                 <h3>{login}</h3>
                 <a href={html_url}>Profile</a>
               </div>
-              <button
+              {/* <button
                 style={{ position: "absolute", right: "0" }}
                 className="btn"
                 type="button"
@@ -61,7 +62,7 @@ const FetchData = () => {
                 }}
               >
                 Delete
-              </button>
+              </button> */}
             </li>
           );
         })}
