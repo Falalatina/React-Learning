@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-import Starter from "./tutorial/11-performance/starter/03-hooks";
+import Starter from "./tutorial/11-performance/starter/04-react-18";
 
 function App() {
   const [count, setCount] = useState(0);
