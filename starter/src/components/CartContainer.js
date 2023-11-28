@@ -1,6 +1,6 @@
 import React from "react";
 import CartItem from "./CartItem";
-import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 
 const CartContainer = () => {
   const { cartItems, total, amount } = useSelector((store) => store.cart);
@@ -15,7 +15,24 @@ const CartContainer = () => {
       </section>
     );
   }
-  return <div>CartContainer</div>;
+  return (
+    <section className="cart">
+      <header>
+        <h2>Your cart</h2>
+      </header>
+      <div>
+        {cartItems.map((item) => {
+          return <CartItem key={item.id} {...item} />;
+        })}
+      </div>
+      <footer>
+        <hr />
+        <h4>
+          Total: <span>${total}</span>
+        </h4>
+      </footer>
+    </section>
+  );
 };
 
 export default CartContainer;
