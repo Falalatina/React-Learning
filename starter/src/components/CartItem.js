@@ -2,6 +2,7 @@ import React from "react";
 import { ChevronDown, ChevronUp } from "../icons";
 import { useDispatch } from "react-redux";
 import { clearItem } from "../features/cart/cartSlice";
+
 const CartItem = ({ id, img, title, price, amount }) => {
   const dispatch = useDispatch();
   return (
