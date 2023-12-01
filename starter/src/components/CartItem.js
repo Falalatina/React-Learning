@@ -1,16 +1,11 @@
 import React from "react";
 import { ChevronDown, ChevronUp } from "../icons";
 import { useDispatch } from "react-redux";
-import {
-  calculateTotal,
-  clearItem,
-  decrease,
-  increase,
-} from "../features/cart/cartSlice";
+import { clearItem, decrease, increase } from "../features/cart/cartSlice";
 
 const CartItem = ({ id, img, title, price, amount }) => {
   const dispatch = useDispatch();
-  dispatch(calculateTotal());
+
   return (
     <article className="cart-item">
       <img src={img} alt={title} />
