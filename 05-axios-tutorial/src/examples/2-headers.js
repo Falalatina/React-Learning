@@ -15,7 +15,9 @@ const Headers = () => {
         },
       });
       setJoke(data.joke);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error.response);
+    }
   };
 
   return (
